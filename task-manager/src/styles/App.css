@@ -1,0 +1,33 @@
+/* -webkit-box-shadow: 9px 9px 20px -6px rgba(0, 0, 0, 0.7);
+box-shadow: 9px 9px 20px -6px rgba(0, 0, 0, 0.7); */
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2015/12/Silver-Scales-Seamless-Pattern-for-Website-Background.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  width: 70%;
+}
