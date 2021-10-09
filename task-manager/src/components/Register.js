@@ -13,7 +13,7 @@ class Register extends React.Component {
   onRegister = (event) => {
     event.preventDefault();
 
-    const usersRef = firebase.firestore().collection("Users");
+    let usersRef = firebase.firestore().collection("Users");
 
     firebase
       .auth()
@@ -37,12 +37,17 @@ class Register extends React.Component {
               this.state.password
             )
             .then(async (credential) => {
-              usersRef.doc(`${credential.user.uid}`).set({
-                name: this.state.name,
-                email: this.state.email,
-                uid: credential.user.uid,
-              });
-              await firebase.auth().updateCurrentUser(credential.user);
+              await usersRef
+                .doc(`${credential.user.uid}`)
+                .set({
+                  name: this.state.name,
+                  email: this.state.email,
+                  uid: credential.user.uid,
+                })
+                .then((result) => {
+                  console.log("register result", result);
+                });
+              firebase.auth().updateCurrentUser(credential.user);
               firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
                   window.location = "/";

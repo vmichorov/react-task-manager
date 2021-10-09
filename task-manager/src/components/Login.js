@@ -13,7 +13,7 @@ class Login extends React.Component {
   onLogin = (event) => {
     event.preventDefault();
 
-    const usersRef = firebase.firestore().collection("Users");
+    let usersRef = firebase.firestore().collection("Users");
 
     firebase
       .auth()
@@ -31,7 +31,7 @@ class Login extends React.Component {
                 .doc(`${result.user.uid}`)
                 .get()
                 .then((user) => {
-                  firebase.auth().updateCurrentUser(user.data());
+                  firebase.auth().updateCurrentUser(user);
                   firebase.auth().onAuthStateChanged((user) => {
                     if (user) {
                       window.location = "/";

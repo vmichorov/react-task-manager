@@ -4,4 +4,5 @@
   background-color: white;
   -webkit-box-shadow: 9px 9px 20px -6px rgba(0, 0, 0, 0.7);
   box-shadow: 9px 9px 20px -6px rgba(0, 0, 0, 0.7);
+  display: flex;
 }

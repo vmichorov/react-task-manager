@@ -25,7 +25,11 @@ class Container extends React.Component {
       <div className="container">
         <BrowserRouter>
           <Route path="/" exact>
-            {this.state.user !== null ? <Content /> : <Redirect to="/login" />}
+            {this.state.user !== null ? (
+              <Content user={this.state.user} />
+            ) : (
+              <Redirect to="/login" />
+            )}
           </Route>
           <Route path="/login">
             {this.state.user === null ? <Login /> : <Redirect to="/" />}
