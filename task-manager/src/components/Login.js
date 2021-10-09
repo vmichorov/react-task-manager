@@ -100,7 +100,7 @@ class Login extends React.Component {
         </form>
         <span className="text">
           Don't have an account?{" "}
-          <Link to="/register" className="link">
+          <Link to="/register" className="authLink">
             Sign up
           </Link>{" "}
           now!

@@ -5,6 +5,7 @@ import Login from "./Login";
 import Register from "./Register";
 import Content from "./Content";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import CreateList from "./CreateList";
 
 class Container extends React.Component {
   constructor(props) {
@@ -31,11 +32,14 @@ class Container extends React.Component {
               <Redirect to="/login" />
             )}
           </Route>
-          <Route path="/login">
+          <Route path="/login" exact>
             {this.state.user === null ? <Login /> : <Redirect to="/" />}
           </Route>
-          <Route path="/register">
+          <Route path="/register" exact>
             {this.state.user === null ? <Register /> : <Redirect to="/" />}
+          </Route>
+          <Route path="/lists/create" exact>
+            {this.state.user !== null ? <CreateList /> : <Login />}
           </Route>
         </BrowserRouter>
       </div>

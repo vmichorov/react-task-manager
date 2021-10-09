@@ -146,7 +146,7 @@ class Register extends React.Component {
         </form>
         <span className="text">
           Already have an account?{" "}
-          <Link to="/login" className="link">
+          <Link to="/login" className="authLink">
             Login
           </Link>{" "}
           now!

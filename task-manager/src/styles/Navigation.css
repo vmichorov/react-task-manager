@@ -7,16 +7,22 @@
   height: 100%;
 }
 
-.button {
+.linkBtn {
   margin: auto 5px;
   border: none;
   transition: transform 0.2s ease;
+  color: black;
 }
 
-.button:hover {
+.linkBtn:hover {
   background-color: whitesmoke;
 }
 
-.button:active {
+.linkBtn:active {
   transform: scale(0.9);
+}
+
+.link {
+  text-decoration: none;
+  color: black;
 }

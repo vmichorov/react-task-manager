@@ -2,6 +2,7 @@ import React from "react";
 
 import "../styles/Navigation.css";
 import firebase from "../firebase";
+import { Link } from "react-router-dom";
 
 class Navigation extends React.Component {
   onLogout = async () => {
@@ -16,10 +17,17 @@ class Navigation extends React.Component {
   render() {
     return (
       <div className="navigation">
-        <button className="button is-uppercase">Create List</button>
-        <button className="button is-uppercase" onClick={this.onLogout}>
-          Sign Out
-        </button>
+        <Link to="/lists/create" className="link">
+          <button className="button is-uppercase linkBtn">Create List</button>
+        </Link>
+        <Link className="link">
+          <button
+            className="button is-uppercase linkBtn"
+            onClick={this.onLogout}
+          >
+            Sign Out
+          </button>
+        </Link>
       </div>
     );
   }
