@@ -39,7 +39,11 @@ class Container extends React.Component {
             {this.state.user === null ? <Register /> : <Redirect to="/" />}
           </Route>
           <Route path="/lists/create" exact>
-            {this.state.user !== null ? <CreateList /> : <Login />}
+            {this.state.user !== null ? (
+              <CreateList user={this.state.user} />
+            ) : (
+              <Login />
+            )}
           </Route>
         </BrowserRouter>
       </div>

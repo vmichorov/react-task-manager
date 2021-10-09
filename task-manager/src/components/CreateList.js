@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/CreateList.css";
+import firebase from "../firebase";
 
 class CreateList extends React.Component {
   constructor(props) {
@@ -10,9 +11,28 @@ class CreateList extends React.Component {
     this.state = { listName: "" };
   }
 
-  onListCreate = (event) => {
+  onListCreate = async (event) => {
     event.preventDefault();
-    console.log(this.state.listName);
+    let listsRef = firebase.firestore().collection("Lists");
+
+    try {
+      if (this.state.listName.length === 0) {
+        throw new Error("List name can't be empty");
+      }
+      const id = listsRef.doc().id;
+      return await listsRef
+        .doc(`${id}`)
+        .set({
+          id: id,
+          name: this.state.listName,
+          ownerId: this.props.user.uid,
+        })
+        .then(() => {
+          window.location.pathname = "/";
+        });
+    } catch (e) {
+      alert(e.message);
+    }
   };
 
   render() {
@@ -26,6 +46,7 @@ class CreateList extends React.Component {
                 className="input"
                 type="text"
                 placeholder="List Name"
+                value={this.state.listName}
                 onChange={(event) => {
                   this.setState({ listName: event.target.value });
                 }}

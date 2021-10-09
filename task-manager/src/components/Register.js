@@ -37,20 +37,15 @@ class Register extends React.Component {
               this.state.password
             )
             .then(async (credential) => {
-              await usersRef
-                .doc(`${credential.user.uid}`)
-                .set({
-                  name: this.state.name,
-                  email: this.state.email,
-                  uid: credential.user.uid,
-                })
-                .then((result) => {
-                  console.log("register result", result);
-                });
+              await usersRef.doc(`${credential.user.uid}`).set({
+                name: this.state.name,
+                email: this.state.email,
+                uid: credential.user.uid,
+              });
               firebase.auth().updateCurrentUser(credential.user);
               firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
-                  window.location = "/";
+                  window.location.pathname = "/";
                 }
               });
             });

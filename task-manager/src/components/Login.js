@@ -34,7 +34,7 @@ class Login extends React.Component {
                   firebase.auth().updateCurrentUser(user);
                   firebase.auth().onAuthStateChanged((user) => {
                     if (user) {
-                      window.location = "/";
+                      window.location.pathname = "/";
                     }
                   });
                 });
