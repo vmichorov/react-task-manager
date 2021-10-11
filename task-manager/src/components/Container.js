@@ -6,6 +6,7 @@ import Register from "./Register";
 import Content from "./Content";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import CreateList from "./CreateList";
+import EditList from "./EditList";
 
 class Container extends React.Component {
   constructor(props) {
@@ -44,6 +45,9 @@ class Container extends React.Component {
             ) : (
               <Login />
             )}
+          </Route>
+          <Route path="/lists/edit/:id" exact>
+            {this.state.user !== null ? <EditList /> : <Login />}
           </Route>
         </BrowserRouter>
       </div>
