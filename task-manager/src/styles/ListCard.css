@@ -1,0 +1,53 @@
+.listCard {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  transition: transform 0.2s ease;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.listCard:nth-child(1) {
+  margin-top: 5px;
+}
+
+.listCard:active {
+  transform: scale(0.9);
+}
+
+.listName {
+  margin-left: 15px;
+  word-wrap: break-word;
+}
+
+.deleteBtn,
+.editBtn {
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: inherit;
+}
+
+.deleteBtn:hover {
+  color: white;
+  background-color: red;
+}
+
+.editBtn:hover {
+  color: white;
+  background-color: #3e8ed0;
+}
+
+.deleteBtn:active,
+.editBtn:active {
+  transform: scale(0.9);
+  border: none;
+}

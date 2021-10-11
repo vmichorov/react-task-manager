@@ -20,7 +20,7 @@ class Navigation extends React.Component {
         <Link to="/lists/create" className="link">
           <button className="button is-uppercase linkBtn">Create List</button>
         </Link>
-        <Link className="link">
+        <Link className="link" to="/login">
           <button
             className="button is-uppercase linkBtn"
             onClick={this.onLogout}
