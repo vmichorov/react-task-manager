@@ -17,6 +17,11 @@ class Navigation extends React.Component {
   render() {
     return (
       <div className="navigation">
+        {window.location.pathname === "/" ? null : (
+          <Link to="/tasks/create" className="link">
+            <button className="button is-uppercase linkBtn">Add Task</button>
+          </Link>
+        )}
         <Link to="/lists/create" className="link">
           <button className="button is-uppercase linkBtn">Create List</button>
         </Link>

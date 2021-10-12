@@ -1,4 +1,4 @@
-.listCard {
+.taskCard {
   border: 1px solid lightgray;
   border-radius: 5px;
   display: flex;
@@ -7,20 +7,19 @@
   height: 60px;
   transition: transform 0.2s ease;
   font-size: 14px;
-  width: 100%;
   cursor: pointer;
   margin-bottom: 5px;
 }
 
-.listCard:nth-child(1) {
+.taskCard:nth-child(1) {
   margin-top: 5px;
 }
 
-.listCard:active {
+.taskCard:active {
   transform: scale(0.9);
 }
 
-.listName {
+.taskName {
   margin-left: 15px;
   word-wrap: break-word;
 }
@@ -50,8 +49,4 @@
 .editBtn:active {
   transform: scale(0.9);
   border: none;
-}
-
-.listLink {
-  color: black;
 }

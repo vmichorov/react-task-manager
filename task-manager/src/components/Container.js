@@ -7,6 +7,7 @@ import Content from "./Content";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import CreateList from "./CreateList";
 import EditList from "./EditList";
+import CreateTask from "./CreateTask";
 
 class Container extends React.Component {
   constructor(props) {
@@ -48,6 +49,24 @@ class Container extends React.Component {
           </Route>
           <Route path="/lists/edit/:id" exact>
             {this.state.user !== null ? <EditList /> : <Login />}
+          </Route>
+          <Route path="/lists/:id" exact>
+            {this.state.user !== null ? (
+              <Content user={this.state.user} />
+            ) : (
+              <Login />
+            )}
+          </Route>
+          <Route path="/tasks/create" exact>
+            {this.state.user !== null ? (
+              <CreateTask
+                listId={window.location.pathname.substr(
+                  window.location.pathname.lastIndexOf("/") + 1
+                )}
+              />
+            ) : (
+              <Login />
+            )}
           </Route>
         </BrowserRouter>
       </div>
