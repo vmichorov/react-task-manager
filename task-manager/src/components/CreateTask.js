@@ -8,7 +8,7 @@ class CreateTask extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { taskName: "", listId: this.props.listId };
+    this.state = { taskName: "" };
   }
 
   onTaskCreate = async (event) => {
@@ -25,10 +25,10 @@ class CreateTask extends React.Component {
         .set({
           id: id,
           name: this.state.taskName,
-          listId: this.state.listId,
+          listId: this.props.lid,
         })
         .then(() => {
-          window.location.pathname = `/lists/${this.state.listId}`;
+          window.location.pathname = `/list/${this.props.lid}`;
         });
     } catch (e) {
       alert(e.message);
@@ -57,7 +57,7 @@ class CreateTask extends React.Component {
             </p>
           </div>
           <div className="buttons">
-            <Link to={`/lists/${this.state.listId}`} className="link">
+            <Link to={`/list/${this.props.lid}`} className="link">
               <button className="button is-info gobackBtn">Go Back</button>
             </Link>
             <input type="submit" className="button is-success" value="Create" />

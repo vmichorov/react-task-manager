@@ -22,23 +22,31 @@ class ListCard extends React.Component {
 
   render() {
     return (
-      <Link to={`/lists/${this.state.list.id}`} className="listLink">
-        <div className="listCard">
-          <div className="control">
-            <p className="listName">{this.state.list?.name}</p>
-          </div>
-          <div className="control buttons">
-            <Link to={`/lists/edit/${this.state.list.id}`}>
-              <button className="button editBtn">
-                <i className="far fa-edit"></i>
-              </button>
-            </Link>
-            <button className="button deleteBtn" onClick={this.onListDelete}>
-              <i className="far fa-trash-alt"></i>
-            </button>
-          </div>
+      <div
+        className="listCard"
+        onClick={() => {
+          window.history.pushState(
+            { id: this.state.list.id },
+            "",
+            `/list/${this.state.list.id}`
+          );
+          window.location.pathname = `/list/${this.state.list.id}`;
+        }}
+      >
+        <div className="control">
+          <p className="listName">{this.state.list?.name}</p>
         </div>
-      </Link>
+        <div className="control buttons">
+          <Link to={`/lists/edit/${this.state.list.id}`}>
+            <button className="button editBtn">
+              <i className="far fa-edit"></i>
+            </button>
+          </Link>
+          <button className="button deleteBtn" onClick={this.onListDelete}>
+            <i className="far fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
     );
   }
 }

@@ -50,19 +50,18 @@ class Container extends React.Component {
           <Route path="/lists/edit/:id" exact>
             {this.state.user !== null ? <EditList /> : <Login />}
           </Route>
-          <Route path="/lists/:id" exact>
+          <Route path="/list/:listId" exact>
             {this.state.user !== null ? (
               <Content user={this.state.user} />
             ) : (
-              <Login />
+              <Redirect to="/login" />
             )}
           </Route>
-          <Route path="/tasks/create" exact>
+          <Route path="/tasks/add" exact>
             {this.state.user !== null ? (
               <CreateTask
-                listId={window.location.pathname.substr(
-                  window.location.pathname.lastIndexOf("/") + 1
-                )}
+                user={this.state.user}
+                lid={window.history.state?.id}
               />
             ) : (
               <Login />
