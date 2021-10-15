@@ -28,6 +28,11 @@ class CreateTask extends React.Component {
           listId: this.props.lid,
         })
         .then(() => {
+          window.history.pushState(
+            { id: this.props.lid },
+            "",
+            `/list/${this.props.lid}`
+          );
           window.location.pathname = `/list/${this.props.lid}`;
         });
     } catch (e) {

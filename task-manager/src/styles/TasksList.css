@@ -1,0 +1,14 @@
+.tasks {
+  flex-grow: 1;
+  margin-left: 10px;
+  border-radius: 5px;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.noTasks {
+  text-align: center;
+  margin-top: 15px;
+}
