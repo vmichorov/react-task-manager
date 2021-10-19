@@ -16,12 +16,13 @@ class TaskCard extends React.Component {
     if (confirmed) {
       let tasksRef = firebase.firestore().collection("Tasks");
       await tasksRef.doc(`${this.state.task.id}`).delete();
+
       window.history.pushState(
-        { id: this.props.lid },
+        { id: this.props.listId },
         "",
-        `/list/${this.props.lid}`
+        `/list/${this.props.listId}`
       );
-      window.location.pathname = `/list/${this.props.lid}`;
+      window.location.reload();
     }
   };
 
@@ -32,11 +33,7 @@ class TaskCard extends React.Component {
           <p className="taskName">{this.state.task.name}</p>
         </div>
         <div className="control buttons">
-<<<<<<< HEAD
-          <Link>
-=======
-          <Link to={`/tasks/edit/${this.state.task.id}`}>
->>>>>>> 846f92600791714b50ffecb7c5a54ad39cca0f9a
+          <Link to={`/tasks/update/${this.state.task.id}`}>
             <button className="button editBtn">
               <i className="far fa-edit"></i>
             </button>

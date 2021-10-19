@@ -1,40 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/CreateList.css";
+import "../styles/EditTask.css";
 import firebase from "../firebase";
 
-class CreateTask extends React.Component {
+class EditTask extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = { taskName: "" };
+    this.state = { taskName: "", id: "" };
   }
 
-  onTaskCreate = async (event) => {
+  async componentDidMount() {
+    let tasksRef = firebase.firestore().collection("Tasks");
+    const id = window.location.pathname.substr(
+      window.location.pathname.lastIndexOf("/") + 1
+    );
+    await tasksRef
+      .doc(`${id}`)
+      .get()
+      .then((task) => {
+        this.setState({ taskName: task.data().name, id: id }, () => {
+          console.log(this.state);
+        });
+      });
+  }
+
+  onTaskEdit = async (event) => {
     event.preventDefault();
     let tasksRef = firebase.firestore().collection("Tasks");
-
     try {
       if (this.state.taskName.length === 0) {
-        throw new Error("Task name can't be empty");
+        throw new Error("List name can't be empty");
       }
-      const id = tasksRef.doc().id;
       return await tasksRef
-        .doc(`${id}`)
-        .set({
-          id: id,
+        .doc(`${this.state.id}`)
+        .update({
           name: this.state.taskName,
-          listId: this.props.listId,
-          isCompleted: false,
         })
         .then(() => {
-          window.history.pushState(
-            { id: this.props.listId },
-            "",
-            `/list/${this.props.listId}`
-          );
-          window.location.reload();
+          window.location.pathname = "/";
         });
     } catch (e) {
       alert(e.message);
@@ -43,15 +47,15 @@ class CreateTask extends React.Component {
 
   render() {
     return (
-      <div className="createList">
-        <h2 className="create-title">Add A New Task</h2>
-        <form className="createForm" onSubmit={this.onTaskCreate}>
+      <div className="editTask">
+        <h2 className="edit-title">Edit Task</h2>
+        <form className="editForm" onSubmit={this.onTaskEdit}>
           <div className="field is-grouped">
             <p className="control has-icons-left has-icons-right is-expanded">
               <input
                 className="input"
                 type="text"
-                placeholder="List Name"
+                placeholder="Task Name"
                 value={this.state.taskName}
                 onChange={(event) => {
                   this.setState({ taskName: event.target.value });
@@ -63,10 +67,10 @@ class CreateTask extends React.Component {
             </p>
           </div>
           <div className="buttons">
-            <Link to={`/list/${this.props.lid}`} className="link">
+            <Link to="/" className="link">
               <button className="button is-info gobackBtn">Go Back</button>
             </Link>
-            <input type="submit" className="button is-success" value="Create" />
+            <input type="submit" className="button is-success" value="Edit" />
           </div>
         </form>
       </div>
@@ -74,4 +78,4 @@ class CreateTask extends React.Component {
   }
 }
 
-export default CreateTask;
+export default EditTask;

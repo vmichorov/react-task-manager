@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import TaskCard from "./TaskCard";
 
 import "../styles/TasksList.css";
@@ -7,7 +8,7 @@ import firebase from "../firebase";
 class TasksList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { tasks: [], listId: this.props.lid.id };
+    this.state = { tasks: [], listId: this.props.listId };
   }
 
   async componentDidMount() {
@@ -27,19 +28,24 @@ class TasksList extends React.Component {
 
   renderTasks = () => {
     let result = this.state.tasks.map((task) => {
-      return <TaskCard task={task} key={task.id} lid={this.state.listId} />;
+      return <TaskCard task={task} key={task.id} listId={this.state.listId} />;
     });
     return result;
   };
 
   render() {
     return (
-      <div className="tasks">
-        {this.state.tasks.length !== 0 ? (
-          this.renderTasks()
-        ) : (
-          <h6 className="noTasks">You haven't added any tasks yet.</h6>
-        )}
+      <div className="tasksContainer">
+        <div className="tasks">
+          {this.state.tasks.length !== 0 ? (
+            this.renderTasks()
+          ) : (
+            <h6 className="noTasks">You haven't added any tasks yet.</h6>
+          )}
+        </div>
+        <Link to="/tasks/add">
+          <button className="button is-uppercase addTaskBtn">Add Task</button>
+        </Link>
       </div>
     );
   }

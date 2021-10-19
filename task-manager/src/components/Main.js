@@ -5,14 +5,16 @@ import ListsList from "./ListsList";
 import TasksList from "./TasksList";
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { listId: window.history.state?.id };
+  }
+
   render() {
     return (
       <div className="main">
         <ListsList uid={this.props.uid} />
-<<<<<<< HEAD
-=======
-        {window.history.state ? <TasksList lid={window.history.state} /> : null}
->>>>>>> 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
+        {this.state.listId ? <TasksList listId={this.state.listId} /> : null}
       </div>
     );
   }
