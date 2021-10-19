@@ -26,10 +26,30 @@ class TaskCard extends React.Component {
     }
   };
 
+  onTaskComplete = async () => {
+    let tasksRef = firebase.firestore().collection("Tasks");
+
+    return await tasksRef
+      .doc(`${this.state.task.id}`)
+      .update({
+        isCompleted: !this.state.task.isCompleted,
+      })
+      .then(() => {
+        window.history.pushState(
+          { id: this.props.listId },
+          "",
+          `/list/${this.props.listId}`
+        );
+        window.location.reload();
+      });
+  };
+
   render() {
     return (
-      <div className="taskCard">
-        <div className="control">
+      <div
+        className={`taskCard ${this.state.task.isCompleted ? "completed" : ""}`}
+      >
+        <div className="control nameContainer" onClick={this.onTaskComplete}>
           <p className="taskName">{this.state.task.name}</p>
         </div>
         <div className="control buttons">

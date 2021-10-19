@@ -22,7 +22,11 @@ class ListCard extends React.Component {
 
   render() {
     return (
-      <div className="listCard">
+      <div
+        className={`listCard ${
+          window.history.state?.id === this.state.list.id ? "selected" : ""
+        }`}
+      >
         <div
           className="control nameContainer"
           onClick={() => {

@@ -11,6 +11,10 @@
   margin-bottom: 5px;
 }
 
+.nameContainer {
+  flex-grow: 1;
+}
+
 .taskCard:nth-child(1) {
   margin-top: 5px;
 }
@@ -49,4 +53,8 @@
 .editBtn:active {
   transform: scale(0.9);
   border: none;
+}
+
+.completed {
+  text-decoration: line-through;
 }

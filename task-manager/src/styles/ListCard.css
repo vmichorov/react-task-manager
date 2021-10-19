@@ -65,3 +65,8 @@
 .listLink {
   color: black;
 }
+
+.selected {
+  border: 1px solid lime;
+  background-color: #ebf7e4;
+}

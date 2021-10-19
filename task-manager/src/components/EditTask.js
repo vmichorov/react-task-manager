@@ -19,9 +19,7 @@ class EditTask extends React.Component {
       .doc(`${id}`)
       .get()
       .then((task) => {
-        this.setState({ taskName: task.data().name, id: id }, () => {
-          console.log(this.state);
-        });
+        this.setState({ taskName: task.data().name, id: id });
       });
   }
 
