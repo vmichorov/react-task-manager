@@ -20,6 +20,14 @@
   transform: scale(0.9);
 }
 
+.nameContainer {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .listName {
   margin-left: 15px;
   word-wrap: break-word;
@@ -37,11 +45,13 @@
 }
 
 .deleteBtn:hover {
+  border: none;
   color: white;
   background-color: red;
 }
 
 .editBtn:hover {
+  border: none;
   color: white;
   background-color: #3e8ed0;
 }

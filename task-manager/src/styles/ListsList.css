@@ -1,12 +1,34 @@
+.listsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30.5%;
+}
+
 .lists {
-  width: 31%;
+  width: 100%;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  height: 300px;
 }
 
 .noLists {
   text-align: center;
   margin-top: 15px;
+}
+
+.createListBtn {
+  margin: 7px;
+  border: 1px solid whitesmoke;
+  transition: transform 0.2s ease;
+}
+
+.createListBtn:hover {
+  background-color: #48c78e;
+  color: white;
+  border: none;
+}
+
+.createListBtn:active {
+  transform: scale(0.9);
 }

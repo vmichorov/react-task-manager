@@ -59,10 +59,7 @@ class Container extends React.Component {
           </Route>
           <Route path="/tasks/add" exact>
             {this.state.user !== null ? (
-              <CreateTask
-                user={this.state.user}
-                lid={window.history.state?.id}
-              />
+              <CreateTask user={this.state.user} />
             ) : (
               <Login />
             )}

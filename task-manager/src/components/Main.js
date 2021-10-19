@@ -8,7 +8,6 @@ class Main extends React.Component {
     return (
       <div className="main">
         <ListsList uid={this.props.uid} />
-        {window.history.state?.id}
       </div>
     );
   }

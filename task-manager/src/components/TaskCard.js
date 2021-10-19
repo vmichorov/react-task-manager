@@ -16,7 +16,7 @@ class TaskCard extends React.Component {
           <p className="taskName">Task Name</p>
         </div>
         <div className="control buttons">
-          <Link to={`/tasks/edit/`}>
+          <Link>
             <button className="button editBtn">
               <i className="far fa-edit"></i>
             </button>

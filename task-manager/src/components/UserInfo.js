@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../styles/UserInfo.css";
 import firebase from "../firebase";
@@ -10,6 +11,15 @@ class UserInfo extends React.Component {
 
     this.getUser();
   }
+
+  onLogout = async () => {
+    await firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        window.location.pathname = "/login";
+      });
+  };
 
   getUser = async () => {
     const usersRef = firebase.firestore().collection("Users");
@@ -23,9 +33,19 @@ class UserInfo extends React.Component {
 
   render() {
     return (
-      <div className="userInfo">
-        <h3>{this.state.user?.name}</h3>
-        <h4>{this.state.user?.email}</h4>
+      <div className="userContainer">
+        <div className="userInfo">
+          <h3>{this.state.user?.name}</h3>
+          <h4>{this.state.user?.email}</h4>
+        </div>
+        <Link className="link" to="/login">
+          <button
+            className="button is-uppercase logoutBtn"
+            onClick={this.onLogout}
+          >
+            Sign Out
+          </button>
+        </Link>
       </div>
     );
   }

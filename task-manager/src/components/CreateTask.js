@@ -9,6 +9,7 @@ class CreateTask extends React.Component {
     super(props);
 
     this.state = { taskName: "" };
+    console.log(this.props);
   }
 
   onTaskCreate = async (event) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ListCard from "./ListCard";
 
 import "../styles/ListsList.css";
@@ -31,12 +32,19 @@ class ListsList extends React.Component {
 
   render() {
     return (
-      <div className="lists">
-        {this.state.lists.length !== 0 ? (
-          this.renderLists()
-        ) : (
-          <h6 className="noLists">You haven't created any lists yet.</h6>
-        )}
+      <div className="listsContainer">
+        <div className="lists">
+          {this.state.lists.length !== 0 ? (
+            this.renderLists()
+          ) : (
+            <h6 className="noLists">You haven't created any lists yet.</h6>
+          )}
+        </div>
+        <Link to="/lists/create">
+          <button className="button is-uppercase createListBtn">
+            Create List
+          </button>
+        </Link>
       </div>
     );
   }
