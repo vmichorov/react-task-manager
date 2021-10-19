@@ -23,7 +23,21 @@ class ListCard extends React.Component {
   render() {
     return (
       <div className="listCard">
+<<<<<<< HEAD
         <div className="control nameContainer">
+=======
+        <div
+          className="control"
+          onClick={() => {
+            window.history.pushState(
+              { id: this.state.list.id },
+              "",
+              `/list/${this.state.list.id}`
+            );
+            window.location.pathname = `/list/${this.state.list.id}`;
+          }}
+        >
+>>>>>>> 846f92600791714b50ffecb7c5a54ad39cca0f9a
           <p className="listName">{this.state.list?.name}</p>
         </div>
         <div className="control buttons">
