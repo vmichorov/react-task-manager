@@ -24,7 +24,6 @@
 }
 
 .taskName {
-  margin-left: 15px;
   word-wrap: break-word;
 }
 
@@ -55,6 +54,20 @@
   border: none;
 }
 
+.iconBox {
+  height: 100%;
+  width: 40px;
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
 .completed {
-  text-decoration: line-through;
+  color: lime;
+}
+
+.pending {
+  color: red;
 }

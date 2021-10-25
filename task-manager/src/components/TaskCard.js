@@ -46,9 +46,14 @@ class TaskCard extends React.Component {
 
   render() {
     return (
-      <div
-        className={`taskCard ${this.state.task.isCompleted ? "completed" : ""}`}
-      >
+      <div className="taskCard">
+        <div className="iconBox">
+          {this.state.task.isCompleted ? (
+            <i class="fas fa-check completed"></i>
+          ) : (
+            <i class="fas fa-times pending"></i>
+          )}
+        </div>
         <div className="control nameContainer" onClick={this.onTaskComplete}>
           <p className="taskName">{this.state.task.name}</p>
         </div>
