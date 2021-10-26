@@ -24,3 +24,9 @@
   color: white;
   background-color: #f14668;
 }
+
+@media (max-width: 768px) {
+  .userContainer {
+    margin: 0;
+  }
+}

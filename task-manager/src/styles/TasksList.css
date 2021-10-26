@@ -27,3 +27,10 @@
   color: white;
   border: none;
 }
+
+@media (max-width: 768px) {
+  .tasksContainer {
+    width: 100%;
+    max-height: 280px;
+  }
+}
