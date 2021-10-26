@@ -26,3 +26,15 @@
 .gobackBtn a {
   color: white;
 }
+
+@media (max-width: 1024px) {
+  .createList {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .createList {
+    width: 481px;
+  }
+}

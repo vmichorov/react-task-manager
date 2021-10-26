@@ -26,3 +26,9 @@
 .gobackBtn a {
   color: white;
 }
+
+@media (max-width: 768px) {
+  .editList {
+    width: 481px;
+  }
+}

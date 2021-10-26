@@ -28,3 +28,21 @@ body {
   height: 450px;
   width: 70%;
 }
+
+@media (max-width: 1200px) {
+  .app {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    height: 100%;
+  }
+}

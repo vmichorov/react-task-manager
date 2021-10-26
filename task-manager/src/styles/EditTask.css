@@ -26,3 +26,9 @@
 .gobackBtn a {
   color: white;
 }
+
+@media (max-width: 768px) {
+  .editTask {
+    width: 481px;
+  }
+}
