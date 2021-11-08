@@ -7,7 +7,7 @@ import TasksList from "./TasksList";
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { listId: window.history.state?.id };
+    this.state = { listId: window.history.state?.listId };
   }
 
   render() {

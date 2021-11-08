@@ -9,6 +9,7 @@ import CreateList from "./CreateList";
 import EditList from "./EditList";
 import CreateTask from "./CreateTask";
 import EditTask from "./EditTask";
+import UserInfo from "./UserInfo";
 
 class Container extends React.Component {
   constructor(props) {
@@ -29,6 +30,9 @@ class Container extends React.Component {
       <div className="container">
         <BrowserRouter>
           <Route path="/" exact>
+            {this.state.user != null ? (
+              <UserInfo user={this.state.user} />
+            ) : null}
             {this.state.user !== null ? (
               <Content user={this.state.user} />
             ) : (
@@ -52,6 +56,9 @@ class Container extends React.Component {
             {this.state.user !== null ? <EditList /> : <Login />}
           </Route>
           <Route path="/list/:listId" exact>
+            {this.state.user != null ? (
+              <UserInfo user={this.state.user} />
+            ) : null}
             {this.state.user !== null ? (
               <Content user={this.state.user} />
             ) : (
@@ -62,7 +69,7 @@ class Container extends React.Component {
             {this.state.user !== null ? (
               <CreateTask
                 user={this.state.user}
-                listId={window.history.state?.id}
+                listId={window.history.state?.listId}
               />
             ) : (
               <Login />

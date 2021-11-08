@@ -24,14 +24,14 @@ class ListCard extends React.Component {
     return (
       <div
         className={`listCard ${
-          window.history.state?.id === this.state.list.id ? "selected" : ""
+          window.history.state?.listId === this.state.list.id ? "selected" : ""
         }`}
       >
         <div
           className="control nameContainer"
           onClick={() => {
             window.history.pushState(
-              { id: this.state.list.id },
+              { listId: this.state.list.id },
               "",
               `/list/${this.state.list.id}`
             );

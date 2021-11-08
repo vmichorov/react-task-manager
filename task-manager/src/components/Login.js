@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/Login.css";
+import "../styles/Auth.css";
 import firebase from "../firebase";
 import { Link } from "react-router-dom";
 

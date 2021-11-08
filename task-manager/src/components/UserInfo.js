@@ -38,14 +38,22 @@ class UserInfo extends React.Component {
           <h3>{this.state.user?.name}</h3>
           <h4>{this.state.user?.email}</h4>
         </div>
-        <Link className="link" to="/login">
-          <button
-            className="button is-uppercase logoutBtn"
-            onClick={this.onLogout}
-          >
-            Sign Out
-          </button>
-        </Link>
+        <div className="links">
+          <Link className="link" to="/login">
+            <button
+              className="button is-uppercase logoutBtn"
+              onClick={this.onLogout}
+            >
+              Sign Out
+            </button>
+          </Link>
+          <Link className="link" to="/">
+            <button className="button is-uppercase linkBtn">Meetings</button>
+          </Link>
+          <Link className="link" to="/">
+            <button className="button is-uppercase linkBtn">Movies</button>
+          </Link>
+        </div>
       </div>
     );
   }

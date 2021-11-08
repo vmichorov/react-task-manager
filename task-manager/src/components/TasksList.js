@@ -8,7 +8,7 @@ import firebase from "../firebase";
 class TasksList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { tasks: [], listId: this.props.listId };
+    this.state = { tasks: [], listId: this.props.listId, render: false };
   }
 
   async componentDidMount() {

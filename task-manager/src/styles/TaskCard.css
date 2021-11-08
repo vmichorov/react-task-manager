@@ -15,10 +15,6 @@
   flex-grow: 1;
 }
 
-.taskCard:nth-child(1) {
-  margin-top: 5px;
-}
-
 .taskCard:active {
   transform: scale(0.9);
 }

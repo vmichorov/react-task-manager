@@ -8,10 +8,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url("https://images.freecreatives.com/wp-content/uploads/2015/12/Silver-Scales-Seamless-Pattern-for-Website-Background.jpg");
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: lightgray;
 }
 
 #root {
@@ -19,12 +19,13 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 450px;
-  width: 70%;
+  height: 100%;
+  width: 100%;
 }

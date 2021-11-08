@@ -1,10 +1,9 @@
 .userContainer {
   background-color: whitesmoke;
-  border-radius: 5px;
-  height: 65px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 80px;
   width: 100%;
-  margin: 15px;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,15 +11,40 @@
 
 .userInfo {
   height: 100%;
-  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.userInfo h3 {
+  font-weight: 600;
+}
+
+.links {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.logoutBtn,
+.linkBtn {
+  border: none;
+  background-color: whitesmoke;
+  margin: 2px;
+  width: 95px;
 }
 
 .logoutBtn {
-  border: none;
-  background-color: whitesmoke;
+  margin-right: 10px;
 }
 
 .logoutBtn:hover {
   color: white;
   background-color: #f14668;
+}
+
+.linkBtn:hover {
+  color: white;
+  background-color: #17a2b8;
 }

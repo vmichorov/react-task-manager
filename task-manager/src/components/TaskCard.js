@@ -29,14 +29,14 @@ class TaskCard extends React.Component {
   onTaskComplete = async () => {
     let tasksRef = firebase.firestore().collection("Tasks");
 
-    return await tasksRef
+    await tasksRef
       .doc(`${this.state.task.id}`)
       .update({
         isCompleted: !this.state.task.isCompleted,
       })
       .then(() => {
         window.history.pushState(
-          { id: this.props.listId },
+          { listId: this.props.listId },
           "",
           `/list/${this.props.listId}`
         );

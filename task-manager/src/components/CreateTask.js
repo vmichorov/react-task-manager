@@ -63,7 +63,7 @@ class CreateTask extends React.Component {
             </p>
           </div>
           <div className="buttons">
-            <Link to={`/list/${this.props.lid}`} className="link">
+            <Link to="/">
               <button className="button is-info gobackBtn">Go Back</button>
             </Link>
             <input type="submit" className="button is-success" value="Create" />
