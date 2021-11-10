@@ -43,11 +43,11 @@ class ListCard extends React.Component {
         <div className="control buttons">
           <Link to={`/task-manager/lists/edit/${this.state.list.id}`}>
             <button className="button editBtn">
-              <i className="far fa-edit"></i>
+              <i className="bi bi-pencil-square"></i>
             </button>
           </Link>
           <button className="button deleteBtn" onClick={this.onListDelete}>
-            <i className="far fa-trash-alt"></i>
+            <i className="bi bi-trash-fill"></i>
           </button>
         </div>
       </div>

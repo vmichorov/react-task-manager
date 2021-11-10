@@ -77,7 +77,7 @@ class Register extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="fas fa-user-alt"></i>
+                <i className="bi bi-person-fill"></i>
               </span>
             </p>
           </div>
@@ -93,7 +93,7 @@ class Register extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="fas fa-envelope"></i>
+                <i className="bi bi-envelope-fill"></i>
               </span>
             </p>
           </div>
@@ -109,7 +109,7 @@ class Register extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="fas fa-lock"></i>
+                <i className="bi bi-lock-fill"></i>
               </span>
             </p>
           </div>
@@ -125,7 +125,7 @@ class Register extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="fas fa-lock"></i>
+                <i className="bi bi-lock-fill"></i>
               </span>
             </p>
           </div>

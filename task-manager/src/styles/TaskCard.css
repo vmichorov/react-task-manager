@@ -29,6 +29,11 @@
   transition: transform 0.2s ease;
 }
 
+.deleteBtn i,
+.editBtn i {
+  margin-bottom: 3px;
+}
+
 .buttons {
   display: flex;
   flex-wrap: inherit;
@@ -56,8 +61,8 @@
   cursor: default;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 18px;
+  font-size: 30px;
+  padding-top: 2px;
 }
 
 .completed {

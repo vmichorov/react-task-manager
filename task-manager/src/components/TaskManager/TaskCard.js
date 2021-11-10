@@ -49,9 +49,9 @@ class TaskCard extends React.Component {
       <div className="taskCard">
         <div className="iconBox">
           {this.state.task.isCompleted ? (
-            <i class="fas fa-check completed"></i>
+            <i className="bi bi-check completed"></i>
           ) : (
-            <i class="fas fa-times pending"></i>
+            <i className="bi bi-x pending"></i>
           )}
         </div>
         <div className="control nameContainer" onClick={this.onTaskComplete}>
@@ -60,11 +60,11 @@ class TaskCard extends React.Component {
         <div className="control buttons">
           <Link to={`/task-manager/tasks/update/${this.state.task.id}`}>
             <button className="button editBtn">
-              <i className="far fa-edit"></i>
+              <i className="bi bi-pencil-square"></i>
             </button>
           </Link>
           <button className="button deleteBtn" onClick={this.onTaskDelete}>
-            <i className="far fa-trash-alt"></i>
+            <i className="bi bi-trash-fill"></i>
           </button>
         </div>
       </div>
