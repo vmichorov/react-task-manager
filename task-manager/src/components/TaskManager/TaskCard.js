@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/TaskCard.css";
-import firebase from "../firebase";
+import "../../styles/TaskCard.css";
+import firebase from "../../firebase";
 
 class TaskCard extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class TaskCard extends React.Component {
         window.history.pushState(
           { listId: this.props.listId },
           "",
-          `/list/${this.props.listId}`
+          `/task-manager/list/${this.props.listId}`
         );
         window.location.reload();
       });
@@ -58,7 +58,7 @@ class TaskCard extends React.Component {
           <p className="taskName">{this.state.task.name}</p>
         </div>
         <div className="control buttons">
-          <Link to={`/tasks/update/${this.state.task.id}`}>
+          <Link to={`/task-manager/tasks/update/${this.state.task.id}`}>
             <button className="button editBtn">
               <i className="far fa-edit"></i>
             </button>

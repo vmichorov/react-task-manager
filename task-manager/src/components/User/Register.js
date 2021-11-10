@@ -1,7 +1,7 @@
 import React from "react";
 
-import "../styles/Auth.css";
-import firebase from "../firebase";
+import "../../styles/Auth.css";
+import firebase from "../../firebase";
 import { Link } from "react-router-dom";
 
 class Register extends React.Component {
@@ -141,7 +141,7 @@ class Register extends React.Component {
         </form>
         <span className="text">
           Already have an account?{" "}
-          <Link to="/login" className="authLink">
+          <Link to="/auth/login" className="authLink">
             Login
           </Link>{" "}
           now!

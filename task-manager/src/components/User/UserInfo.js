@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/UserInfo.css";
-import firebase from "../firebase";
+import "../../styles/UserInfo.css";
+import firebase from "../../firebase";
 
 class UserInfo extends React.Component {
   constructor(props) {
@@ -10,6 +10,8 @@ class UserInfo extends React.Component {
     this.state = { user: props.user };
 
     this.getUser();
+
+    console.log(window.location.pathname);
   }
 
   onLogout = async () => {
@@ -17,7 +19,7 @@ class UserInfo extends React.Component {
       .auth()
       .signOut()
       .then(() => {
-        window.location.pathname = "/login";
+        window.location.pathname = "/auth/login";
       });
   };
 
@@ -35,11 +37,11 @@ class UserInfo extends React.Component {
     return (
       <div className="userContainer">
         <div className="userInfo">
-          <h3>{this.state.user?.name}</h3>
+          <h3>Welcome, {this.state.user?.name}</h3>
           <h4>{this.state.user?.email}</h4>
         </div>
         <div className="links">
-          <Link className="link" to="/login">
+          <Link className="link" to="/">
             <button
               className="button is-uppercase logoutBtn"
               onClick={this.onLogout}
@@ -47,10 +49,10 @@ class UserInfo extends React.Component {
               Sign Out
             </button>
           </Link>
-          <Link className="link" to="/">
+          {/* <Link className="link" to="/">
             <button className="button is-uppercase linkBtn">Meetings</button>
-          </Link>
-          <Link className="link" to="/">
+          </Link> */}
+          <Link className="link" to="/movies">
             <button className="button is-uppercase linkBtn">Movies</button>
           </Link>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/Main.css";
+import "../../styles/Main.css";
 import ListsList from "./ListsList";
 import TasksList from "./TasksList";
 

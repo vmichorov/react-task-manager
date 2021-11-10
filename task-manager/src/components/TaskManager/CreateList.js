@@ -1,40 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/CreateList.css";
-import firebase from "../firebase";
+import "../../styles/CreateList.css";
+import firebase from "../../firebase";
 
-class CreateTask extends React.Component {
+class CreateList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { taskName: "" };
+    this.state = { listName: "" };
   }
 
-  onTaskCreate = async (event) => {
+  onListCreate = async (event) => {
     event.preventDefault();
-    let tasksRef = firebase.firestore().collection("Tasks");
+    let listsRef = firebase.firestore().collection("Lists");
 
     try {
-      if (this.state.taskName.length === 0) {
-        throw new Error("Task name can't be empty");
+      if (this.state.listName.length === 0) {
+        throw new Error("List name can't be empty");
       }
-      const id = tasksRef.doc().id;
-      return await tasksRef
+      const id = listsRef.doc().id;
+      return await listsRef
         .doc(`${id}`)
         .set({
           id: id,
-          name: this.state.taskName,
-          listId: this.props.listId,
-          isCompleted: false,
+          name: this.state.listName,
+          ownerId: this.props.user.uid,
         })
         .then(() => {
-          window.history.pushState(
-            { id: this.props.listId },
-            "",
-            `/list/${this.props.listId}`
-          );
-          window.location.reload();
+          window.location.pathname = "/task-manager/";
         });
     } catch (e) {
       alert(e.message);
@@ -44,17 +38,17 @@ class CreateTask extends React.Component {
   render() {
     return (
       <div className="createList">
-        <h2 className="create-title">Add A New Task</h2>
-        <form className="createForm" onSubmit={this.onTaskCreate}>
+        <h2 className="create-title">Create A New List</h2>
+        <form className="createForm" onSubmit={this.onListCreate}>
           <div className="field is-grouped">
             <p className="control has-icons-left has-icons-right is-expanded">
               <input
                 className="input"
                 type="text"
                 placeholder="List Name"
-                value={this.state.taskName}
+                value={this.state.listName}
                 onChange={(event) => {
-                  this.setState({ taskName: event.target.value });
+                  this.setState({ listName: event.target.value });
                 }}
               />
               <span className="icon is-small is-left">
@@ -63,7 +57,7 @@ class CreateTask extends React.Component {
             </p>
           </div>
           <div className="buttons">
-            <Link to="/">
+            <Link to="/task-manager/" className="link">
               <button className="button is-info gobackBtn">Go Back</button>
             </Link>
             <input type="submit" className="button is-success" value="Create" />
@@ -74,4 +68,4 @@ class CreateTask extends React.Component {
   }
 }
 
-export default CreateTask;
+export default CreateList;

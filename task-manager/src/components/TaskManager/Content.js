@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/Content.css";
+import "../../styles/Content.css";
 import Main from "./Main";
 
 class Content extends React.Component {

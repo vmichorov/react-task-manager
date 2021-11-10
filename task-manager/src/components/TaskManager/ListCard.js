@@ -1,7 +1,7 @@
 import React from "react";
 
-import "../styles/ListCard.css";
-import firebase from "../firebase";
+import "../../styles/ListCard.css";
+import firebase from "../../firebase";
 import { Link } from "react-router-dom";
 
 class ListCard extends React.Component {
@@ -16,7 +16,7 @@ class ListCard extends React.Component {
     if (confirmed) {
       let listsRef = firebase.firestore().collection("Lists");
       await listsRef.doc(`${this.state.list.id}`).delete();
-      window.location.pathname = "/";
+      window.location.pathname = "/task-manager/";
     }
   };
 
@@ -33,7 +33,7 @@ class ListCard extends React.Component {
             window.history.pushState(
               { listId: this.state.list.id },
               "",
-              `/list/${this.state.list.id}`
+              `/task-manager/list/${this.state.list.id}`
             );
             window.location.reload();
           }}
@@ -41,7 +41,7 @@ class ListCard extends React.Component {
           <p className="listName">{this.state.list?.name}</p>
         </div>
         <div className="control buttons">
-          <Link to={`/lists/edit/${this.state.list.id}`}>
+          <Link to={`/task-manager/lists/edit/${this.state.list.id}`}>
             <button className="button editBtn">
               <i className="far fa-edit"></i>
             </button>

@@ -1,7 +1,7 @@
 import React from "react";
 
-import "../styles/Auth.css";
-import firebase from "../firebase";
+import "../../styles/Auth.css";
+import firebase from "../../firebase";
 import { Link } from "react-router-dom";
 
 class Login extends React.Component {
@@ -100,7 +100,7 @@ class Login extends React.Component {
         </form>
         <span className="text">
           Don't have an account?{" "}
-          <Link to="/register" className="authLink">
+          <Link to="/auth/register" className="authLink">
             Sign up
           </Link>{" "}
           now!
