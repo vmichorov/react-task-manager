@@ -60,7 +60,7 @@ class EditList extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="far fa-clipboard"></i>
+                <i className="bi bi-clipboard"></i>
               </span>
             </p>
           </div>
