@@ -44,7 +44,14 @@
   background-color: #f14668;
 }
 
+<<<<<<< HEAD
 .linkBtn:hover {
   color: white;
   background-color: #17a2b8;
+=======
+@media (max-width: 768px) {
+  .userContainer {
+    margin: 0;
+  }
+>>>>>>> 0403c24dff5d302633def16478859fd75a7c24ad
 }
