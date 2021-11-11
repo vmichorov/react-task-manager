@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/TaskCard.css";
-import firebase from "../firebase";
+import "../../styles/TaskCard.css";
+import firebase from "../../firebase";
 
 class TaskCard extends React.Component {
   constructor(props) {
@@ -29,16 +29,16 @@ class TaskCard extends React.Component {
   onTaskComplete = async () => {
     let tasksRef = firebase.firestore().collection("Tasks");
 
-    return await tasksRef
+    await tasksRef
       .doc(`${this.state.task.id}`)
       .update({
         isCompleted: !this.state.task.isCompleted,
       })
       .then(() => {
         window.history.pushState(
-          { id: this.props.listId },
+          { listId: this.props.listId },
           "",
-          `/list/${this.props.listId}`
+          `/task-manager/list/${this.props.listId}`
         );
         window.location.reload();
       });
@@ -46,20 +46,25 @@ class TaskCard extends React.Component {
 
   render() {
     return (
-      <div
-        className={`taskCard ${this.state.task.isCompleted ? "completed" : ""}`}
-      >
+      <div className="taskCard">
+        <div className="iconBox">
+          {this.state.task.isCompleted ? (
+            <i className="bi bi-check completed"></i>
+          ) : (
+            <i className="bi bi-x pending"></i>
+          )}
+        </div>
         <div className="control nameContainer" onClick={this.onTaskComplete}>
           <p className="taskName">{this.state.task.name}</p>
         </div>
         <div className="control buttons">
-          <Link to={`/tasks/update/${this.state.task.id}`}>
+          <Link to={`/task-manager/tasks/update/${this.state.task.id}`}>
             <button className="button editBtn">
-              <i className="far fa-edit"></i>
+              <i className="bi bi-pencil-square"></i>
             </button>
           </Link>
           <button className="button deleteBtn" onClick={this.onTaskDelete}>
-            <i className="far fa-trash-alt"></i>
+            <i className="bi bi-trash-fill"></i>
           </button>
         </div>
       </div>

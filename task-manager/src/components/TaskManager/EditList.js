@@ -1,34 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/CreateList.css";
-import firebase from "../firebase";
+import "../../styles/EditList.css";
+import firebase from "../../firebase";
 
-class CreateList extends React.Component {
+class EditList extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = { listName: "" };
+    this.state = { listName: "", id: "" };
   }
 
-  onListCreate = async (event) => {
+  async componentDidMount() {
+    let listsRef = firebase.firestore().collection("Lists");
+    const id = window.location.pathname.substr(
+      window.location.pathname.lastIndexOf("/") + 1
+    );
+    await listsRef
+      .doc(`${id}`)
+      .get()
+      .then((list) => {
+        this.setState({ listName: list.data().name, id: id });
+      });
+  }
+
+  onListEdit = async (event) => {
     event.preventDefault();
     let listsRef = firebase.firestore().collection("Lists");
-
     try {
       if (this.state.listName.length === 0) {
         throw new Error("List name can't be empty");
       }
-      const id = listsRef.doc().id;
       return await listsRef
-        .doc(`${id}`)
-        .set({
-          id: id,
+        .doc(`${this.state.id}`)
+        .update({
           name: this.state.listName,
-          ownerId: this.props.user.uid,
         })
         .then(() => {
-          window.location.pathname = "/";
+          window.location.pathname = "/task-manager/";
         });
     } catch (e) {
       alert(e.message);
@@ -37,9 +45,9 @@ class CreateList extends React.Component {
 
   render() {
     return (
-      <div className="createList">
-        <h2 className="create-title">Create A New List</h2>
-        <form className="createForm" onSubmit={this.onListCreate}>
+      <div className="editList">
+        <h2 className="edit-title">Edit List</h2>
+        <form className="editForm" onSubmit={this.onListEdit}>
           <div className="field is-grouped">
             <p className="control has-icons-left has-icons-right is-expanded">
               <input
@@ -57,10 +65,10 @@ class CreateList extends React.Component {
             </p>
           </div>
           <div className="buttons">
-            <Link to="/" className="link">
+            <Link to="/task-manager/" className="link">
               <button className="button is-info gobackBtn">Go Back</button>
             </Link>
-            <input type="submit" className="button is-success" value="Create" />
+            <input type="submit" className="button is-success" value="Edit" />
           </div>
         </form>
       </div>
@@ -68,4 +76,4 @@ class CreateList extends React.Component {
   }
 }
 
-export default CreateList;
+export default EditList;

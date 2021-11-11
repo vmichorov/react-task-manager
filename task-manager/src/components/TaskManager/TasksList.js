@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TaskCard from "./TaskCard";
 
-import "../styles/TasksList.css";
-import firebase from "../firebase";
+import "../../styles/TasksList.css";
+import firebase from "../../firebase";
 
 class TasksList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { tasks: [], listId: this.props.listId };
+    this.state = { tasks: [], listId: this.props.listId, render: false };
   }
 
   async componentDidMount() {
@@ -43,7 +43,7 @@ class TasksList extends React.Component {
             <h6 className="noTasks">You haven't added any tasks yet.</h6>
           )}
         </div>
-        <Link to="/tasks/add">
+        <Link to="/task-manager/tasks/add">
           <button className="button is-uppercase addTaskBtn">Add Task</button>
         </Link>
       </div>

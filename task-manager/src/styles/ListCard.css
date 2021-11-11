@@ -12,10 +12,6 @@
   margin-bottom: 5px;
 }
 
-.listCard:nth-child(1) {
-  margin-top: 5px;
-}
-
 .listCard:active {
   transform: scale(0.9);
 }
@@ -29,7 +25,7 @@
 }
 
 .listName {
-  margin-left: 15px;
+  margin-left: 10px;
   word-wrap: break-word;
 }
 
@@ -37,6 +33,11 @@
 .editBtn {
   font-size: 14px;
   transition: transform 0.2s ease;
+}
+
+.deleteBtn i,
+.editBtn i {
+  margin-bottom: 3px;
 }
 
 .buttons {
@@ -68,5 +69,4 @@
 
 .selected {
   border: 1px solid lime;
-  background-color: #ebf7e4;
 }

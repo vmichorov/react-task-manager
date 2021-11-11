@@ -1,7 +1,7 @@
 import React from "react";
 
-import "../styles/Login.css";
-import firebase from "../firebase";
+import "../../styles/Auth.css";
+import firebase from "../../firebase";
 import { Link } from "react-router-dom";
 
 class Login extends React.Component {
@@ -68,7 +68,7 @@ class Login extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="fas fa-envelope"></i>
+                <i className="bi bi-envelope-fill"></i>
               </span>
             </p>
           </div>
@@ -84,7 +84,7 @@ class Login extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="fas fa-lock"></i>
+                <i className="bi bi-lock-fill"></i>
               </span>
             </p>
           </div>
@@ -100,7 +100,7 @@ class Login extends React.Component {
         </form>
         <span className="text">
           Don't have an account?{" "}
-          <Link to="/register" className="authLink">
+          <Link to="/auth/register" className="authLink">
             Sign up
           </Link>{" "}
           now!

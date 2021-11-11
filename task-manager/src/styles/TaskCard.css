@@ -15,16 +15,11 @@
   flex-grow: 1;
 }
 
-.taskCard:nth-child(1) {
-  margin-top: 5px;
-}
-
 .taskCard:active {
   transform: scale(0.9);
 }
 
 .taskName {
-  margin-left: 15px;
   word-wrap: break-word;
 }
 
@@ -32,6 +27,11 @@
 .editBtn {
   font-size: 14px;
   transition: transform 0.2s ease;
+}
+
+.deleteBtn i,
+.editBtn i {
+  margin-bottom: 3px;
 }
 
 .buttons {
@@ -55,6 +55,20 @@
   border: none;
 }
 
+.iconBox {
+  height: 100%;
+  width: 40px;
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  padding-top: 2px;
+}
+
 .completed {
-  text-decoration: line-through;
+  color: lime;
+}
+
+.pending {
+  color: red;
 }

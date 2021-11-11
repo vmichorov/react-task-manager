@@ -1,7 +1,6 @@
 import React from "react";
 
-import "../styles/Content.css";
-import Header from "./Header";
+import "../../styles/Content.css";
 import Main from "./Main";
 
 class Content extends React.Component {
@@ -13,7 +12,6 @@ class Content extends React.Component {
   render() {
     return (
       <div className="content">
-        <Header user={this.state.user} />
         <Main uid={this.state.user.uid} />
       </div>
     );

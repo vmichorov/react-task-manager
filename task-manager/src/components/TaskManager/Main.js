@@ -1,13 +1,13 @@
 import React from "react";
 
-import "../styles/Main.css";
+import "../../styles/Main.css";
 import ListsList from "./ListsList";
 import TasksList from "./TasksList";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { listId: window.history.state?.id };
+    this.state = { listId: window.history.state?.listId };
   }
 
   render() {
