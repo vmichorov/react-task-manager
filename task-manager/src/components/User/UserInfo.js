@@ -10,8 +10,6 @@ class UserInfo extends React.Component {
     this.state = { user: props.user };
 
     this.getUser();
-
-    console.log(window.location.pathname);
   }
 
   onLogout = async () => {
@@ -49,9 +47,11 @@ class UserInfo extends React.Component {
               Sign Out
             </button>
           </Link>
-          {/* <Link className="link" to="/">
-            <button className="button is-uppercase linkBtn">Meetings</button>
-          </Link> */}
+          <Link className="link" to="/task-manager">
+            <button className="button is-uppercase linkBtn">
+              Task Manager
+            </button>
+          </Link>
           <Link className="link" to="/movies">
             <button className="button is-uppercase linkBtn">Movies</button>
           </Link>

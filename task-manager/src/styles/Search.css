@@ -1,0 +1,25 @@
+.search {
+  width: 30%;
+  margin: 20px;
+}
+
+.search h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.searchForm {
+  display: flex;
+  margin-top: 10px;
+}
+
+.searchBtn {
+  background-color: #198754;
+  color: white;
+  border: none;
+  margin-left: 5px;
+}
+
+.searchBtn:hover {
+  color: white;
+}

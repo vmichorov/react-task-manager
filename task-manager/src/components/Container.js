@@ -12,6 +12,8 @@ import CreateList from "./TaskManager/CreateList";
 import EditList from "./TaskManager/EditList";
 import CreateTask from "./TaskManager/CreateTask";
 import EditTask from "./TaskManager/EditTask";
+// Movies
+import Catalog from "./Movies/Catalog";
 
 class Container extends React.Component {
   constructor(props) {
@@ -87,6 +89,18 @@ class Container extends React.Component {
             </Route>
             <Route path="/task-manager/tasks/update/:id" exact>
               {this.state.user !== null ? <EditTask /> : <Login />}
+            </Route>
+          </Switch>
+          <Switch>
+            <Route path="/movies" exact>
+              {this.state.user != null ? (
+                <UserInfo user={this.state.user} />
+              ) : null}
+              {this.state.user !== null ? (
+                <Catalog user={this.state.user} />
+              ) : (
+                <Redirect to="/auth/login" />
+              )}
             </Route>
           </Switch>
         </BrowserRouter>
