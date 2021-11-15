@@ -14,6 +14,7 @@ import CreateTask from "./TaskManager/CreateTask";
 import EditTask from "./TaskManager/EditTask";
 // Movies
 import Catalog from "./Movies/Catalog";
+import CreateMovie from "./Movies/CreateMovie";
 
 class Container extends React.Component {
   constructor(props) {
@@ -98,6 +99,13 @@ class Container extends React.Component {
               ) : null}
               {this.state.user !== null ? (
                 <Catalog user={this.state.user} />
+              ) : (
+                <Redirect to="/auth/login" />
+              )}
+            </Route>
+            <Route path="/movies/create" exact>
+              {this.state.user !== null ? (
+                <CreateMovie user={this.state.user} />
               ) : (
                 <Redirect to="/auth/login" />
               )}

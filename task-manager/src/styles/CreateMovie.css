@@ -1,0 +1,29 @@
+.create {
+  background-color: white;
+  -webkit-box-shadow: 9px 9px 20px -6px rgba(0, 0, 0, 0.7);
+  box-shadow: 9px 9px 20px -6px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  height: 55%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createForm {
+  width: 60%;
+}
+.field {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.dateInput {
+  min-width: 211.917px;
+}
+
+.createBtn {
+  margin-top: 20px;
+}

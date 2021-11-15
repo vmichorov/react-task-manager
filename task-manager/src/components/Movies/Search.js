@@ -27,7 +27,7 @@ class Search extends React.Component {
                   this.setState({ movieName: ev.target.value });
                 }}
               />
-              <span className="icon is-left clearField">
+              <span className="icon is-left">
                 <i className="bi bi-film"></i>
               </span>
             </p>

@@ -28,7 +28,7 @@ class CreateList extends React.Component {
           ownerId: this.props.user.uid,
         })
         .then(() => {
-          window.location.pathname = "/task-manager/";
+          window.location.pathname = "/task-manager";
         });
     } catch (e) {
       alert(e.message);
