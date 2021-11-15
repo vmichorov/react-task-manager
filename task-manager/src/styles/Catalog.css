@@ -1,0 +1,31 @@
+.catalog {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.view {
+  transition: transform 0.3s ease;
+}
+
+.view:hover {
+  transform: scale(1.2);
+}
+
+.navigation a:nth-child(1) {
+  margin-right: 10px;
+}
+.navigation a .button {
+  width: 100px;
+}
