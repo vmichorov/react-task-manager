@@ -40,7 +40,7 @@ class ListCard extends React.Component {
         >
           <p className="listName">{this.state.list?.name}</p>
         </div>
-        <div className="control buttons">
+        <div className="control icons">
           <Link to={`/task-manager/lists/edit/${this.state.list.id}`}>
             <button className="button editBtn">
               <i className="bi bi-pencil-square"></i>

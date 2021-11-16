@@ -65,7 +65,7 @@ class Register extends React.Component {
       <div className="register">
         <h2 className="title">Register</h2>
         <form className="registerForm" onSubmit={this.onRegister}>
-          <div className="field">
+          <div className="field inputField">
             <p className="control has-icons-left has-icons-right">
               <input
                 className="input"

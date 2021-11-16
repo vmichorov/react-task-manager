@@ -40,7 +40,7 @@ class CreateList extends React.Component {
       <div className="createList">
         <h2 className="create-title">Create A New List</h2>
         <form className="createForm" onSubmit={this.onListCreate}>
-          <div className="field is-grouped">
+          <div className="field is-grouped nameInput">
             <p className="control has-icons-left has-icons-right is-expanded">
               <input
                 className="input"
@@ -52,7 +52,7 @@ class CreateList extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="far fa-clipboard"></i>
+                <i className="bi bi-clipboard"></i>
               </span>
             </p>
           </div>

@@ -7,6 +7,10 @@
   width: 50%;
 }
 
+.createForm {
+  min-width: 100%;
+}
+
 .create-title {
   text-align: center;
   margin: 20px 0;
@@ -17,6 +21,10 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 15px;
+}
+
+.nameInput {
+  margin: 15px;
 }
 
 .gobackBtn {

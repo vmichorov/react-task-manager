@@ -9,7 +9,7 @@
   overflow: auto;
 }
 
-.buttons {
+.navControls {
   display: flex;
   justify-content: space-between;
   margin: 20px;

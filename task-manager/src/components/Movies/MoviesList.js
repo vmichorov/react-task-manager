@@ -25,9 +25,11 @@ class MoviesList extends React.Component {
   };
 
   renderMovies = () => {
-    let result = this.state.movies.map((movie) => {
-      return <MovieListCard movie={movie} key={movie.id} />;
-    });
+    let result = this.state.movies
+      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
+      .map((movie) => {
+        return <MovieListCard movie={movie} key={movie.id} />;
+      });
     return result;
   };
 

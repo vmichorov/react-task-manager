@@ -46,7 +46,7 @@ class CreateTask extends React.Component {
       <div className="createList">
         <h2 className="create-title">Add A New Task</h2>
         <form className="createForm" onSubmit={this.onTaskCreate}>
-          <div className="field is-grouped">
+          <div className="field is-grouped nameInput">
             <p className="control has-icons-left has-icons-right is-expanded">
               <input
                 className="input"
@@ -58,7 +58,7 @@ class CreateTask extends React.Component {
                 }}
               />
               <span className="icon is-small is-left">
-                <i className="far fa-clipboard"></i>
+                <i className="bi bi-clipboard"></i>
               </span>
             </p>
           </div>

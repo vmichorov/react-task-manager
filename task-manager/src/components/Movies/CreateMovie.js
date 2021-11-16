@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../../styles/CreateMovie.css";
 import firebase from "../../firebase";
@@ -57,7 +58,7 @@ class CreateMovie extends React.Component {
             </p>
           </div>
           <div className="field">
-            <p className="control has-icons-left has-icons-right">
+            <p className="control has-icons-left">
               <input
                 className="input dateInput"
                 type="date"
@@ -104,14 +105,27 @@ class CreateMovie extends React.Component {
               </span>
             </p>
           </div>
-          <div className="field">
-            <p className="control">
-              <input
-                className="button is-success createBtn"
-                type="submit"
-                value="Create"
-              />
-            </p>
+          <div className="createButtons">
+            <Link to="/movies">
+              <div className="field buttonField">
+                <p className="control">
+                  <input
+                    className="button is-info"
+                    type="button"
+                    value="Go Back"
+                  />
+                </p>
+              </div>
+            </Link>
+            <div className="field buttonField">
+              <p className="control">
+                <input
+                  className="button is-success createBtn"
+                  type="submit"
+                  value="Create"
+                />
+              </p>
+            </div>
           </div>
         </form>
       </div>

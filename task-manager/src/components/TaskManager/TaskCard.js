@@ -57,7 +57,7 @@ class TaskCard extends React.Component {
         <div className="control nameContainer" onClick={this.onTaskComplete}>
           <p className="taskName">{this.state.task.name}</p>
         </div>
-        <div className="control buttons">
+        <div className="control icons">
           <Link to={`/task-manager/tasks/update/${this.state.task.id}`}>
             <button className="button editBtn">
               <i className="bi bi-pencil-square"></i>

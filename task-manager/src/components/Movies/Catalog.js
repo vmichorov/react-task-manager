@@ -15,7 +15,7 @@ class Catalog extends React.Component {
     return (
       <div className="catalog">
         <Search />
-        <div className="buttons">
+        <div className="navControls">
           <div className="viewControls">
             <button className="button view listControl">
               <i className="bi bi-list"></i>

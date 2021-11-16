@@ -15,15 +15,20 @@
   width: 60%;
 }
 .field {
-  margin: 15px;
   display: flex;
   justify-content: center;
 }
 
 .dateInput {
-  min-width: 211.917px;
+  min-width: 241.917px;
 }
 
-.createBtn {
-  margin-top: 20px;
+.createButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.buttonField {
+  margin: 5px;
 }
